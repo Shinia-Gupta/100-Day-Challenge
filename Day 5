@@ -1,0 +1,61 @@
+//binary to decimal 
+//eg-10001101=1*2^7+0*2^6+0*2^5+...1*2^0
+//decimal to octal
+//8|_41
+//8|_5---1
+//8|_0---5
+//octal obtained=51
+package ConversionPrograms;
+import java.util.*;
+import java.lang.*;
+public class BinaryToOctal {
+	long binary;
+	//method 1-to convert binary to decimal
+public  int BinaryToDecimal()
+		{
+	int decimal=0,i=0;
+	
+	while(binary!=0)
+	{
+		//to get last digit of binary number that is remainder
+		long rem= (binary%10);
+		if(rem==0 && rem==1) {
+		//to get the decimal number 
+		decimal+=binary*Math.pow(2,i);
+		//to increase the power of 2
+		i++;
+		//to apply the separation and conversion to decimal on remaining part of the binary number
+		binary=binary/10;
+		}
+		else
+			break;
+	}//while loop ends
+	System.out.println("Enter valid binary number(digits 0 and 1)!");
+			return decimal;
+		}//method 1 ends
+//method 2- to convert the decimal number obtained into octal
+public  int DecimalToOctal()
+{
+	
+	long decimalObt=BinaryToDecimal();
+	int octal=0,i=0;
+	while(decimalObt!=0)
+	{
+	int rem=(int) (decimalObt%8);
+	octal+=rem*i++;
+	i=i*10;
+	octal/=8;
+	}
+	return octal;
+}//method 2 ends
+//main method
+public static void main(String[] args) {
+	System.out.print("Enter binary number: ");
+	Scanner s=new Scanner(System.in);
+	long b=s.nextLong();
+	BinaryToOctal o=new BinaryToOctal();
+	int val=o.DecimalToOctal();
+	System.out.print("The octal conversion is "+val);
+	
+}
+}
