@@ -1,0 +1,32 @@
+package PatternPrograms;
+import java.util.Scanner;
+public class UpperTriangularPattern {
+protected void GeneratePattern(int rows)
+{
+	int i,j,k;
+	//Outer for loop for traversing through rows
+	for(i=0;i<rows;i++)
+	{
+		//2 Nested for loops 
+		//Inner for loop 1 to create spaces 
+		for(j=1;j<=rows-i;j++)
+		{
+			System.out.print(" ");
+		}
+		//Inner for loop 2 for generating the star pattern
+		for(k=0;k<=i;k++)
+		{
+			System.out.print("*");
+		}
+		//After completing a row, moving to the next row
+		System.out.println();
+	}
+}
+public static void main(String[] args) {
+	System.out.print("Enter the number of Starry rows: ");
+	Scanner s=new Scanner(System.in);
+	int r=s.nextInt();
+	UpperTriangularPattern u=new UpperTriangularPattern();
+	u.GeneratePattern(r);
+}
+}
