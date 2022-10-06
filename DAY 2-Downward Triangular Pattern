@@ -1,0 +1,33 @@
+package PatternPrograms;
+import java.util.Scanner;
+public class DownwardTriangle {
+	//Method to print a downward triangle of user character input
+protected void DownTri(int rows, char pType)
+{
+	int i,j;
+	//outer loop for no of rows
+	for(i=1;i<=rows;i++)
+	{
+		//Loop for printing the pattern of user input 
+		for(j=i;j<=rows;j++)
+		{
+			System.out.print(pType+" ");
+		}//inner for loop ends
+		System.out.println();
+	}//outer for loop ends
+}
+//method ends
+//Main method
+public static void main(String[] args)
+{
+	System.out.println("Enter the number of rows: ");
+	Scanner s=new Scanner(System.in);
+	int r=s.nextInt();
+	System.out.println("Enter the character you want to enter as a pattern:");
+	char c=s.next().charAt(0);
+	DownwardTriangle d=new DownwardTriangle();
+	d.DownTri(r,c);
+	
+
+}//main method ends
+}//class ends
