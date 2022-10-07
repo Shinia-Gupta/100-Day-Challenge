@@ -75,6 +75,6 @@ class BinarySearch {
 		System.out.println("Program ended at " + endTime);
 		// Total Time taken is obtained as follows
 		long totalTime = endTime - startTime;
-		System.out.println("Total time taken by the linear search to execute is: " + totalTime + " nanoseconds");
+		System.out.println("Total time taken by the binary search to execute is: " + totalTime + " nanoseconds");
 	} // main ends
 } // class ends
