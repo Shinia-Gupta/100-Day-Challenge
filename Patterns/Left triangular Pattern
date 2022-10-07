@@ -1,16 +1,69 @@
-//why do we put System.in in Scanner class
+/* Taking user input for the number of rows to print- 
+suppose user input for number of rows is 5 
+therefore, 
+r=5
+=>k=5
+taking outer for loop for the number of rows upto less than the number of rows since the iterating variable starts from 0, so to traverse till the number k=5, we are gping tp traverse it till one less than the number!
+so outer for loop traverses from 0 to 4
+inner for loop is for number of columns
+=>for a=0
+ b=10 and b>=0
+so 11 spaces spaces will be printed 
+then again initializing b to 0 and b<=0
+printing stars for 1 time...the next time the condition will become false and star will not get printed.
+Upto this, 1 row has completed!
+Move to the next row using println statement!
+
+=>for a=1
+b=8 and b>=0
+so 9 spaces spaces will be printed 
+then again initializing b to 0 and b<=1
+printing stars for 2 times...the next time the condition will become false and star will not get printed.
+Upto this, 2 rows have completed!
+Move to the next row using println statement!
+
+=>for a=2
+b=6 and b>=0
+so 7 spaces spaces will be printed 
+then again initializing b to 0 and b<=2
+printing stars for 3 times...the next time the condition will become false and star will not get printed.
+Upto this, 3 rows have completed!
+Move to the next row using println statement!
+
+=>for a=3
+b=4 and b>=0
+so 5 spaces spaces will be printed 
+then again initializing b to 0 and b<=3
+printing stars for 4 times...the next time the condition will become false and star will not get printed.
+Upto this, 4 rows have completed!
+Move to the next row using println statement!
+
+=>for a=4
+b=2 and b>=0
+so 3 spaces spaces will be printed 
+then again initializing b to 0 and b<=4
+printing stars for 5 times...the next time the condition will become false and star will not get printed.
+Upto this, 5 rows have completed!
+Move to the next row using println statement!
+
+=>for a=5
+ the condition will become false andouter loop doesn't get executed.
+*/
 package PatternPrograms;
 import java.util.Scanner;
 public class LeftTriangleStarPattern {
 protected void PatternLeft(int k)
 {
 	int a,b;
+	//outer for loop
 	for(a=0;a<k;a++)
 	{
+		//inner for loop 1 for space printing
 		for(b=2*(k-a);b>=0;b--)
 		{
 			System.out.print(" ");
 		}
+		//inner for loop 2 for star printing
 		for(b=0;b<=a;b++)
 		{
 			System.out.print("* ");
@@ -26,3 +79,4 @@ public static void main(String[] args) {
 	l.PatternLeft(r);
 }
 }
+
