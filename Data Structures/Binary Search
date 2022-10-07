@@ -1,0 +1,80 @@
+package DataStructures;
+
+import java.util.Scanner;
+
+class BinarySearch {
+	static int binarySearch(int a[], int beg, int end, int val) {
+		int mid;
+		if (end >= beg) {
+			mid = (beg + end) / 2;
+			if (a[mid] == val) {
+				return mid + 1; // if the item to be searched is present in middle
+			}
+			// if the item to be searched is greater than the middle, then it can only be
+			// in right sub array
+			else if (a[mid] < val) {
+				return binarySearch(a, mid + 1, end, val);
+			}
+
+			// if the item to be searched is smaller than the middle, then it can only
+			// be in the left subarray
+			else {
+				return binarySearch(a, beg, mid - 1, val);
+			}
+		}
+		return -1;
+	}
+
+	// Main program
+	public static void main(String args[]) {
+		// Starting the timer
+		long startTime = System.nanoTime();
+		System.out.println("Program started at " + startTime);
+		int[] a = new int[10];
+		System.out.print("Enter the elements of array: ");
+		Scanner s = new Scanner(System.in);
+		int i, flag = 0;
+		// Input element values
+		for (i = 0; i < a.length; i++) {
+			a[i] = s.nextInt();
+		}
+		int len = a.length;
+		// Check whether the array is in ascending order
+		for (int j = 0; j < len - 1; j++) {
+			if (a[j] > a[j + 1] && j < (len - 1)) {
+				System.out.println("ERROR!! Enter array elements in ascending order ! ");
+				flag = 1;
+				break;
+			}
+		}
+
+		/// ELEMENT SEARCH - Call method
+		if (flag == 0) {
+			int key;
+			System.out.println("Enter the element to search: ");
+			key = s.nextInt(); // Get element to search
+
+			System.out.println("Number of array elements are " + len);
+			// Display Array elements
+			System.out.print("The elements of the array are: ");
+			for (i = 0; i < len; i++) {
+				System.out.print(a[i] + " ");
+			}
+			// Method Call for element search
+			int res = binarySearch(a, 0, len - 1, key);
+			System.out.println();
+			System.out.println("Element to be searched is: " + key);
+			// condition based on return value
+			if (res == -1)
+				System.out.println("Element is not present in the array");
+			else
+				System.out.println("Element is present at " + res + " position of array");
+		} // if ends
+			// Ending the timer
+		long endTime = System.nanoTime();
+		System.out.println("Program ended at " + endTime);
+		// Total Time taken is obtained as follows
+		long totalTime = endTime - startTime;
+		System.out.println("Total time taken by the linear search to execute is: " + totalTime + " nanoseconds");
+	} // main ends
+} // class ends
