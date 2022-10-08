@@ -1,0 +1,68 @@
+//* * * * * * * 
+//-* * * * * * 
+//--* * * * * 
+//---* * * * 
+//----* * * 
+//-----* * 
+//------* 
+//      * 
+//     * * 
+//    * * * 
+//   * * * * 
+//  * * * * * 
+// * * * * * * 
+//* * * * * * *
+package PatternPrograms;
+import java.util.Scanner;
+public class MirrorLowerStarTriangle {
+	//Function to create mirror of lower triangle of user defined pattern character
+protected void mirrorLower(int rows,char pType)
+{
+	int i,j;
+	//Triangle 1-First downward triangle 
+	//outer loop 1 for no of rows
+	for(i=1;i<=rows;i++)
+	{
+		//inner loop1 to print white spaces
+		for(j=2;j<=i;j++)
+		{
+			System.out.print(" ");
+		}//inner loop 1 ends
+		//inner loop2 for printing user defined pattern character
+		for(j=i;j<=rows;j++)
+		{
+			System.out.print(pType+" ");
+		}//inner loop 2 ends
+		//after completing one row, moving to the next row
+		System.out.println();
+	}//outer loop 1 ends
+	//Triangle 2- mirror triangle of downward triangle
+	//outer loop 2 for the no of rows
+	for(i=1;i<=rows;i++)
+	{
+		//inner loop 1 for whitespace printing
+		for(j=1;j<=rows-i;j++)
+		{
+			System.out.print(" ");
+		}//inner loop 1 ends
+		//inner loop 2 to print user defined input pattern character
+		for(j=1;j<=i;j++)
+		{
+			System.out.print(pType+" ");
+		}
+		//statement for moving to the next row
+		System.out.println();
+	}//outer loop 2 ends
+}//method ends
+//main method
+public static void main(String[] args) {
+	System.out.println("Enter the number of rows: ");
+	Scanner s=new Scanner(System.in);
+	int r=s.nextInt();
+	System.out.println("Enter the character you want to enter as a pattern:");
+	char c=s.next().charAt(0);
+	MirrorLowerStarTriangle m=new MirrorLowerStarTriangle();
+	m.mirrorLower(r,c);
+	
+}
+}
