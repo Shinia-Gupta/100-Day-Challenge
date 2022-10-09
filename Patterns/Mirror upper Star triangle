@@ -1,0 +1,72 @@
+
+//------* 
+//-----* * 
+//----* * * 
+//---* * * * 
+//--* * * * * 
+//-* * * * * * 
+//* * * * * * *
+//* * * * * * * 
+//-* * * * * * 
+//--* * * * * 
+//---* * * * 
+//----* * * 
+//-----* * 
+//------* 
+
+package PatternPrograms;
+
+import java.util.Scanner;
+public class MirrorUpperStarTrianglePattern {
+protected void mirrorUpperStar(int rows)
+{
+//break the shape into 2 triangles-upper and lower
+//For upper triangle
+int i,j;
+//for printing no of rows
+for(i=1;i<=rows;i++)
+{
+	//for printing spaces
+	for(j=i;j<=rows;j++)
+	{
+		System.out.print(" ");
+	}
+	//for printing stars
+	for(j=1;j<=i;j++)
+	{
+		System.out.print("* ");
+	}
+
+	//for moving to the next row
+	System.out.println("");
+}
+//For lower triangle
+//System.out.print("Rows= " +rows+"\n");
+//For printing the number of rows
+for(i=1;i<=rows;i++)
+{
+	//for printing spaces in left triangular pattern form
+	for(j=1;j<=i;j++)
+	{
+		System.out.print(" ");
+	}
+	//for printing the stars in the form of lower triangular pattern
+	for(j=i;j<=rows;j++)
+	{
+		System.out.print("* ");
+	}
+
+	//for moving to the next row
+	System.out.println();
+}
+	
+
+}
+public static void main(String[] args) {
+System.out.print("Enter the number of rows: ");
+Scanner s=new Scanner(System.in);
+int r=s.nextInt();
+MirrorUpperStarTrianglePattern m=new MirrorUpperStarTrianglePattern();
+m.mirrorUpperStar(r);
+}
+}
