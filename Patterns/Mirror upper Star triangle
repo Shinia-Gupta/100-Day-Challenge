@@ -13,7 +13,249 @@
 //----* * * 
 //-----* * 
 //------* 
+/*EXPLANATION
 
+ * Take user input for the number of rows
+
+ * Suppose r=5
+
+ * Calling the function to create a mirror upper star triangle pattern with number of rows passed as a parameter value
+
+ * The outer for loop is for number of rows
+
+ * The inner for loop is for number of columns of spaces and Stars printing
+
+ * Now, i will take values from 1 to 5
+
+ * j will take values from 1 to i to print i number of spaces before the star is to be printed.
+
+ * Another inner for loop of j will taje values from i to number of rows to print the number of stars in each row
+
+ * 
+
+ * now as rows=5
+
+ * i=1 to 5
+
+ * 
+
+ * ----------------------------------------------------
+
+ * FOR UPPER TRIANGLE
+
+ * ----------------------------------------------------
+
+ * =>i=1
+
+ * First inner for loop
+
+ * j=1, j<=5
+
+ * *prints 5 spaces*
+
+ * j=2=> loop breaks as conditon gets false
+
+ * Second inner for loop
+
+ * j=1,j<=1
+
+ * *prints 1 star*
+
+ * Till this one row is complete
+
+ * ----------------------------------------------------
+
+ * =>i=2
+
+ * First inner for loop
+
+ * j=2, j<=5
+
+ * *prints 4 spaces*
+
+ * j=3=> loop breaks as conditon gets false
+
+ * Second inner for loop
+
+ * j=1,j<=2
+
+ * *prints 2 stars*
+
+ * Till this second row is complete 
+
+ * ----------------------------------------------------
+
+ * =>i=3
+
+ * First inner for loop
+
+ * j=3, j<=5
+
+ * *prints 3 spaces*
+
+ * j=4=> loop breaks as conditon gets false
+
+ * Second inner for loop
+
+ * j=1,j<=3
+
+ * *prints 3 stars*
+
+ * Till this third row is complete 
+
+ * ----------------------------------------------------
+
+ * =>i=4
+
+ * First inner for loop
+
+ * j=4, j<=5
+
+ * *prints 2 spaces*
+
+ * j=5=> loop breaks as conditon gets false
+
+ * Second inner for loop
+
+ * j=1,j<=4
+
+ * *prints 4 stars*
+
+ * Till this fourth row is complete 
+
+ * ----------------------------------------------------
+
+ * =>i=5
+
+ * First inner for loop
+
+ * j=5, j<=5
+
+ * *prints 1 space*
+
+ * j=6=> loop breaks as conditon gets false
+
+ * Second inner for loop
+
+ * j=1,j<=5
+
+ * *prints 5 stars*
+
+ * Till this Fifth row is complete 
+
+ * ----------------------------------------------------
+
+ * =>i=6
+
+ * loop breaks as conditon gets false
+
+UPPER TRIANGULAR PATTERN IS COMPLETE
+
+* -----------------------------------------------------
+
+ * FOR LOWER TRIANGLE
+
+ * ----------------------------------------------------
+
+ * =>i=1
+
+ * First inner for loop
+
+ * j=1, j<=1
+
+ * *prints 1 spaces*
+
+ * j=2=> loop breaks as conditon gets false
+
+ * Second inner for loop
+
+ * j=1,j<=5
+
+ * *prints 5 stars*
+
+ * Till this first row is complete 
+
+* ----------------------------------------------------
+
+ * =>i=2
+
+ * First inner for loop
+
+ * j=1, j<=2
+
+ * *prints 2 spaces*
+
+ * j=3=> loop breaks as conditon gets false
+
+ * Second inner for loop
+
+ * j=2,j<=5
+
+ * *prints 4 stars*
+
+ * Till this second row is complete
+
+ * * ----------------------------------------------------
+
+ * =>i=3
+
+ * First inner for loop
+
+ * j=1, j<=3
+
+ * *prints 3 spaces*
+
+ * j=4=> loop breaks as conditon gets false
+
+ * Second inner for loop
+
+ * j=3,j<=5
+
+ * *prints 3 stars*
+
+ * Till this third row is complete  
+
+ * * ----------------------------------------------------
+
+ * =>i=4
+
+ * First inner for loop
+
+ * j=1, j<=4
+
+ * *prints 4 spaces*
+
+ * j=5=> loop breaks as conditon gets false
+
+ * Second inner for loop
+
+ * j=4,j<=5
+
+ * *prints 2 stars*
+
+ * Till this fourth row is complete 
+
+ * * ----------------------------------------------------
+
+ * =>i=5
+
+ * First inner for loop
+
+ * j=1, j<=5
+
+ * *prints 5 spaces*
+
+ * j=6=> loop breaks as condition gets false
+
+ * Second inner for loop
+
+ * j=5,j<=5
+
+ * *prints 1 stars*
+
+ * Till this fifth row is complete 
+
+ * */
 package PatternPrograms;
 
 import java.util.Scanner;
