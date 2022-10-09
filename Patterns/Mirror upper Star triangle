@@ -29,7 +29,7 @@
 
  * j will take values from 1 to i to print i number of spaces before the star is to be printed.
 
- * Another inner for loop of j will taje values from i to number of rows to print the number of stars in each row
+ * Another inner for loop of j will taKe values from i to number of rows to print the number of stars in each row
 
  * 
 
