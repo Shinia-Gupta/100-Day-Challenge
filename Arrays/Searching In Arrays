@@ -1,0 +1,75 @@
+ Problem-Searching in Arrays
+ 
+Solution-
+package Arrays;
+import java.util.Scanner;
+import java.util.stream.IntStream;
+import java.util.Arrays;
+
+public class SearchingInArrays {
+	// Function to show use of linear search to search an element in array
+	public void LinearSearchInArray(int[] arr, int toCheckValue) {
+		// check if the specified element is present in the array or not using Linear Search method
+		boolean test = false;
+		for (int element : arr) {
+			if (element == toCheckValue) {
+				test = true;
+				break;
+			}
+		}
+
+		// Print the result
+		System.out.println("Is " + toCheckValue + " present in the array: " + test);
+	}
+
+	// Function to show use of binary search to search an element in array
+	public void BinarySearchInArray(int[] arr, int toCheckValue) {
+		// sort given array
+		Arrays.sort(arr);
+
+// check if the specified element is present in the array or not using Binary Search method
+		int res = Arrays.binarySearch(arr, toCheckValue);
+
+		boolean test = res > 0 ? true : false;
+
+		// Print the result
+		System.out.println("Is " + toCheckValue + " present in the array: " + test);
+	}
+
+	// Function to show use of List.contains() method to search an element in array
+	public void ListContains(int[] arr, int toCheckValue) {
+		// check if the specified element is present in the array or not using contains() method
+		boolean test = Arrays.asList(arr).contains(toCheckValue);
+
+		// Print the result
+		System.out.println("Is " + toCheckValue + " present in the array: " + test);
+	}
+
+	// Function to show use of Stream.anyMatch() method to search an element in
+	// array
+	public void StreamMatch(int[] arr, int toCheckValue) {
+		// check if the specified element is present in the array or not using anyMatch() method
+		boolean test = IntStream.of(arr).anyMatch(x -> x == toCheckValue);
+
+		// Print the result
+		System.out.println("Is " + toCheckValue + " present in the array: " + test);
+	}
+
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		System.out.print("Enter the number of elements in the array: ");
+		int totalElem = s.nextInt();
+		int array1[] = new int[totalElem];
+		System.out.print("Enter the array elements:");
+		for (int i = 0; i < totalElem; i++) {
+			array1[i] = s.nextInt();
+		}
+		System.out.print("Enter the element to search: ");
+		int target = s.nextInt();
+		SearchingInArrays a = new SearchingInArrays();
+		a.LinearSearchInArray(array1, target);
+		a.BinarySearchInArray(array1, target);
+		a.ListContains(array1, target);
+		a.StreamMatch(array1, target);
+	}
+}
