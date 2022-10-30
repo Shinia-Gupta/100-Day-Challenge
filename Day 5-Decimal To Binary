@@ -1,0 +1,42 @@
+//DECIMAL TO BINARY
+//Eg-123
+//2|_123
+//2|_61--1
+//2|_30--1
+//2|_15--0
+//2|_7--1
+//2|_3--1
+//2|_1--1
+//2|_0--1
+
+package ConversionPrograms;
+import java.util.*;
+public class DecimalToBinary {
+//method to convert decimal to binary number
+	protected void decToBinary(long decimal)
+	{
+		int[] binary= new int[100];
+		int bin=0,i=0,j;
+		//inputting values in the array indexes
+		while(decimal!=0)
+		{
+			binary[i]=(int)decimal%2;
+			decimal=decimal/2;
+			i++;
+		}//while loop ends
+		System.out.println("Binary conversion is: ");
+		//printing array index values from upper bound to lower bound in reverse order
+		for(j=i-1;j>=0;j--)
+			System.out.print(binary[j]);
+	}//method ends
+	//main method
+	public static void main(String[] args) {
+		System.out.print("Enter Decimal number: ");
+		Scanner s = new Scanner(System.in);
+		int dec = s.nextInt();
+		DecimalToBinary dh = new DecimalToBinary();
+		 dh.decToBinary(dec);
+		//System.out.print("The binary conversion is " + val);
+	}
+}
+
