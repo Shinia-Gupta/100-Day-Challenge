@@ -1,0 +1,71 @@
+Problem-Largest Number in Array
+
+Solution-
+package Arrays;
+import java.util.*;
+
+public class LargestElemInArray {
+	// 1.Iterative Method
+	public int largest1(int[] arr) {
+		int i;
+
+		// Initialize maximum element
+		int max = arr[0];
+
+		// Traverse array elements from second and
+		// compare every element with current max
+		for (i = 1; i < arr.length; i++)
+			if (arr[i] > max)
+				max = arr[i];
+
+		return max;
+	}
+
+	// 2.Java 8 Stream
+	public void largest2(int[] arr) {
+		int max = Arrays.stream(arr).max().getAsInt();
+		System.out.println("Largest number in given array is " + max);
+	}
+
+	// 3.Sorting
+	public int largest3(int[] arr, int n) {
+		Arrays.sort(arr);
+		return arr[n - 1];
+	}
+
+	// 4.Collections.max()
+	public void largest4(int[] arr) {
+		List<Integer> list = new ArrayList<>();
+		for (int i = 0; i < arr.length; i++) {
+			list.add(arr[i]);
+		}
+		System.out.println("Largest in given array is " + Collections.max(list));
+	}
+
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		System.out.print("Enter the number of elements in the array: ");
+		int totalElem = s.nextInt();
+		int array1[] = new int[totalElem];
+		System.out.print("Enter the array elements:");
+		for (int i = 0; i < totalElem; i++) {
+			array1[i] = s.nextInt();
+		}
+		LargestElemInArray l = new LargestElemInArray();
+
+		System.out.println("Result using iterative method");
+		int result = l.largest1(array1);
+		System.out.println("Largest number is " + result);
+
+		System.out.println("Result using Java 8 Stream");
+		l.largest2(array1);
+
+		System.out.println("Result using Sorting");
+		int result2 = l.largest3(array1, totalElem);
+		System.out.println("Largest number is " + result2);
+
+		System.out.println("Result using  Collections.max()");
+		l.largest4(array1);
+
+	}
+}
