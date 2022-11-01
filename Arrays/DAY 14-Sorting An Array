@@ -1,0 +1,43 @@
+PROBLEM- SORTING AN ARRAY
+
+SOLUTION-
+package Arrays;
+
+import java.util.*;
+
+public class SortArrays {
+
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		// integer array sorting
+		System.out.print("Enter the number of elements in the array: ");
+		int totalElem = s.nextInt();
+		int array1[] = new int[totalElem];
+		System.out.println("Enter the integer array elements:");
+		for (int i = 0; i < totalElem; i++) {
+			array1[i] = s.nextInt();
+		}
+		Arrays.sort(array1);
+		System.out.println("\nThe sorted array is: ");
+		for (int num : array1) {
+			System.out.print(num + " ");
+		}
+		// String array sorting
+		System.out.println("Enter the length of string in the array: ");
+		int len = s.nextInt();
+		String array2[] = new String[len];
+		System.out.println("Enter the String array elements:");
+		for (int i = 0; i < array2.length; i++) {
+			array2[i] = s.next();
+		}
+		// Sorts array2[] in ascending order
+		Arrays.sort(array2);
+		System.out.println("Modified arr[] in ascending order is: " + Arrays.toString(array2));
+
+		// Sorts array2[] in descending order
+		Arrays.sort(array2, Collections.reverseOrder());
+
+		// printing the above array
+		System.out.println("Modified arr[] in descending order is: :" + Arrays.toString(array2));
+	}
+}
