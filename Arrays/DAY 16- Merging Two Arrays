@@ -1,0 +1,60 @@
+PROBLEM- Merging Two Arrays
+
+SOLUTION- 
+
+package Arrays;
+
+import java.util.*;
+
+public class MergeTwoArrays {
+
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		
+		//Getting user input for first array elements
+		System.out.print("Enter the number of elements in the array 1: ");
+		int totalElem1 = s.nextInt();
+		int array1[] = new int[totalElem1];
+		int i;
+		System.out.println("Enter the array elements:");
+		for (i = 0; i < totalElem1; i++) {
+			array1[i] = s.nextInt();
+		}
+		
+		//Getting user input for second array elements
+		System.out.print("Enter the number of elements in the array 2: ");
+		int totalElem2 = s.nextInt();
+		int array2[] = new int[totalElem1];
+		System.out.println("Enter the array elements:");
+		for (i = 0; i < totalElem2; i++) {
+			array2[i] = s.nextInt();
+		}
+		// resultant array size
+		int totalElem3 = totalElem1 + totalElem2;
+
+		// Creating a new array
+		int[] array3 = new int[totalElem3];
+
+		// Loop to store the elements of first array into resultant array
+		for (i = 0; i < totalElem1; i = i + 1) {
+			// Storing the elements in the resultant array
+			array3[i] = array1[i];
+		}
+
+		// Loop to concat the elements of second array into resultant array
+		for (i = 0; i < totalElem2; i = i + 1) {
+
+			// Storing the elements in the resultant array
+			array3[totalElem1 + i] = array2[i];
+		}
+
+		System.out.println("Elements of array as a result of merging two arrays is : ");
+		// Loop to print the elements of resultant array after merging
+		for (i = 0; i < totalElem3; i = i + 1) {
+
+			// print the element
+			System.out.print(array3[i]+"\t");
+		}
+	}
+
+}
