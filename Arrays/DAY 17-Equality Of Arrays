@@ -1,0 +1,67 @@
+PROBLEM- Equality Of Arrays
+
+SOLUTION-
+
+package Arrays;
+
+import java.util.Scanner;
+
+public class EqualityOfArrays {
+
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+
+		// Getting user input for first array elements
+		System.out.print("Enter the number of elements in the array 1: ");
+		int totalElem1 = s.nextInt();
+		int array1[] = new int[totalElem1];
+		int i;
+		System.out.println("Enter the array elements:");
+		for (i = 0; i < totalElem1; i++) {
+			array1[i] = s.nextInt();
+		}
+		// Getting user input for second array elements
+		System.out.print("Enter the number of elements in the array 2: ");
+		int totalElem2 = s.nextInt();
+		int array2[] = new int[totalElem2];
+		System.out.println("Enter the array elements:");
+		for (i = 0; i < totalElem2; i++) {
+			array2[i] = s.nextInt();
+		}
+
+		
+    
+    // store the result
+		boolean result = true;
+
+		// Check if length of the two arrays are equal or not
+		if (array1.length == array2.length) {
+
+			// Loop to check elements of arrays one by one
+			for (i = 0; i < array1.length; i = i + 1) {
+
+				// To check if any element is different
+				if (array1[i] != array2[i]) {
+
+					// If any element is different then it will assign false into boolean variable
+					result = false;
+				}
+			}
+		} else {
+
+			// If the length of two arrays is different then it will assign false into boolean variable
+			result = false;
+		}
+
+		// After completion to check whether result is true of false
+		if (result == true) {
+
+			// Print the result
+			System.out.println("Arrays are equal");
+		} else {
+
+			// Print the result
+			System.out.println("Arrays are not equal");
+		}
+	}
+}
