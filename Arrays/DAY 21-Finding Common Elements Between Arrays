@@ -1,0 +1,58 @@
+PROBLEM-Finding Common Elements Between Arrays 
+
+SOLUTION-
+package Arrays;
+
+import java.util.*;
+
+public class CommonElementsBetweenArrays {
+	private static void FindCommonElemet(int[] arr1,
+            int[] arr2)
+{
+//Set<String> set = new HashSet<>();
+for (int i = 0; i < arr1.length; i++) {
+for (int j = 0; j < arr2.length; j++) {
+if (arr1[i] == arr2[j]) {
+
+System.out.print(arr1[i]+"\t");
+
+break;
+}
+}
+}
+
+}
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+
+		// Getting user input for first array elements
+		System.out.print("Enter the number of elements in the array 1: ");
+		int totalElem1 = s.nextInt();
+		int array1[] = new int[totalElem1];
+		int i;
+		System.out.println("Enter the array elements:");
+		for (i = 0; i < totalElem1; i++) {
+			array1[i] = s.nextInt();
+		}
+		// Getting user input for second array elements
+		System.out.print("Enter the number of elements in the array 2: ");
+		int totalElem2 = s.nextInt();
+		int array2[] = new int[totalElem2];
+		System.out.println("Enter the array elements:");
+		for (i = 0; i < totalElem2; i++) {
+			array2[i] = s.nextInt();
+		}
+		 // print Array 1
+        System.out.println("Array 1: "
+                           + Arrays.toString(array1));
+ 
+        // print Array 2
+        System.out.println("Array 2: "
+                           + Arrays.toString(array2));
+ 
+        System.out.print("Common Elements: ");
+ 
+        // Find the common elements
+        FindCommonElemet(array1, array2);
+}
+}
