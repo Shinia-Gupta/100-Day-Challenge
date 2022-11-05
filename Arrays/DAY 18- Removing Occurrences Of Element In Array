@@ -1,0 +1,67 @@
+Problem-Removing Occurrences Of Element In Array
+
+SOLUTION-
+package Arrays;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class RemoveAllOccurrencesOfElement {
+
+	// function to remove all occurrences of an element from an array
+	public static int[] removeElements(int[] arr, int key) {
+		// Move all other elements to beginning
+		int index = 0;
+		for (int i = 0; i < arr.length; i++)
+			if (arr[i] != key)
+				arr[index++] = arr[i];
+
+		// Create a copy of arr[]
+		return Arrays.copyOf(arr, index);
+	}
+
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+
+		// Getting user input for array elements
+		System.out.print("Enter the number of elements in the array 1: ");
+		int totalElem1 = s.nextInt();
+		int array1[] = new int[totalElem1];
+		int i;
+		System.out.println("Enter the array elements:");
+		for (i = 0; i < totalElem1; i++) 
+		{
+			array1[i] = s.nextInt();
+		}
+		System.out.print("Enter the element whose occurrences are to be removed: ");
+		int key = s.nextInt();
+		boolean flag = true;
+		// if the element whose occurrences are to be removed is present in array
+		for (i = 0; i < totalElem1; i++) 
+		{
+			if (key == array1[i])
+			{
+				array1 = removeElements(array1, key);
+				flag = true;
+				break;
+			}
+		}
+		if (flag = true)
+		{
+			System.out.println("Array after removing all occurrences of " + key + " is: ");
+			System.out.println(Arrays.toString(array1));
+
+		}
+		// if the element whose occurrences are to be removed is not present in array
+		else
+		{
+			System.out.println(key + " is not present in array!");
+			flag = false;
+
+		}
+
+
+
+	}
+
+}
