@@ -1,0 +1,42 @@
+PROBLEM-  Copy Of Array
+
+SOLUTION-
+package Arrays;
+
+import java.util.Scanner;
+
+public class CopyOfArray {
+	  public static void main(String[] args)
+	    {
+		  Scanner s = new Scanner(System.in);
+			System.out.print("Enter the number of elements in the array: ");
+			int totalElem = s.nextInt();
+			int array1[] = new int[totalElem];
+			System.out.print("Enter the array elements:");
+			for (int i = 0; i < totalElem; i++) {
+				array1[i] = s.nextInt();
+			}
+	        // Create an array array2[] of same size as array1[]
+	        int array2[] = new int[array1.length];
+	 
+	        // Copying elements of array1[] to array2[]
+	        for (int i = 0; i < array1.length; i++)
+	        	array2[i] = array1[i];
+	 
+	        // Changing array2[] to verify that
+	        // array2[] is different from array1[]
+	        array2[0]++;
+	 
+	        // Display message only
+	        System.out.println("Contents of array1[] ");
+	 
+	        for (int i = 0; i < array1.length; i++)
+	            System.out.print(array1[i] + " ");
+	 
+	        // Display message only
+	        System.out.println("\n\nContents of array2[] ");
+	 
+	        for (int i = 0; i < array2.length; i++)
+	            System.out.print(array2[i] + " ");
+	    }
+	}
