@@ -1,0 +1,101 @@
+PROBLEM-Interchange Row Elements
+
+SOLUTION-
+package Arrays;
+
+import java.io.*;
+import java.util.Scanner;
+
+public class InterchangeRowElements {
+	// Java Program to Interchange Elements of First and Last Row in a Matrix
+
+	// Method 1
+	// To swap First and Last Row
+	static void swap_First_last(int a[][]) {
+		int rws = a.length;
+
+		// Interchanging of elements between the
+		// first and last rows
+		for (int j = 0; j < a[0].length; j++) {
+
+			// Using temporary variable so in order not to lose the values of the matrix Simply, swapping the values stored
+			int temp = a[0][j];
+			a[0][j] = a[rws - 1][j];
+			a[rws - 1][j] = temp;
+		}
+	}
+
+	// Method 2
+
+	public static void main(String args[]) throws IOException {
+		int i, j, row, col;
+
+		Scanner s = new Scanner(System.in);
+
+		System.out.println("Enter rows and columns of matrix:");
+		row = s.nextInt();
+		col = s.nextInt();
+		System.out.println("Enter array elements: ");
+		int a[][] = new int[row][col];
+		for (i = 0; i < row; i++) {
+			for (j = 0; j < col; j++) {
+				a[i][j] = s.nextInt();
+			}
+		}
+		// Display message only
+		System.out.println("Input matrix is as follows : ");
+
+		// Printing the Input matrix
+		for (j = 0; j < a.length; j++) {
+			for (int k = 0; k < a[0].length; k++)
+
+				// Print the elements of the input matrix
+				System.out.print(a[j][k] + " ");
+
+			// New line as row ended
+			System.out.println();
+		}
+
+		System.out.println("Swapped matrix is as follows : ");
+
+		// Calling the (method1) to swap rows in a matrix
+		swap_First_last(a);
+
+		// Printing the Swapped matrix
+		for (j = 0; j < a.length; j++) {
+			for (int k = 0; k < a[0].length; k++)
+
+				// Print the elements of the swapped matrix
+				System.out.print(a[j][k] + " ");
+
+			// New line as row ended
+			System.out.println();
+		}
+	}
+}
+
+
+INPUT
+Enter rows and columns of matrix:
+3
+3
+Enter array elements: 
+10
+20
+30
+40
+50
+60
+70
+80
+90
+
+OUTPUT
+Input matrix is as follows : 
+10 20 30 
+40 50 60 
+70 80 90 
+Swapped matrix is as follows : 
+70 80 90 
+40 50 60 
+10 20 30 
