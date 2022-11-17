@@ -1,0 +1,43 @@
+PROBLEM- Getting a character from string
+
+SOLUTION-
+package Strings;
+
+import java.util.Scanner;
+
+public class GetCharFromString {
+	// Java program to get a specific character from a given String at a specific
+	// index
+
+	// Function 1 String.charAt() method to get the specific character
+	public static char getCharFromString1(String str, int index) {
+		return str.charAt(index);
+	}
+
+	// Function 2 String.toCharArray() method to get the specific character
+	public static char getCharFromString2(String str, int index) {
+		return str.toCharArray()[index];
+	}
+
+	// main method
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+
+		// Get the String
+		System.out.println("Enter a string: ");
+		String str = s.nextLine();
+		// Get the index
+		System.out.println("enter the index at which you want the character from: ");
+		int index = s.nextInt();
+
+		// Get the specific character
+		char ch1 = getCharFromString1(str, index);
+		System.out.println("Using String.charAt() method");
+		System.out.println("Character from " + str + " at index " + index + " is " + ch1);
+
+		char ch2 = getCharFromString2(str, index);
+		System.out.println("Using String.toCharArray() method");
+		System.out.println("Character from " + str + " at index " + index + " is " + ch2);
+
+	}
+}
