@@ -1,0 +1,44 @@
+PROBLEM- Replace A character From String
+
+SOLUTION
+package Strings;
+
+import java.util.Scanner;
+
+public class ReplaceCharAtIndex {
+
+	public static void main(String args[]) {
+		Scanner s = new Scanner(System.in);
+
+		// Get the String
+		System.out.println("Enter a string: ");
+		String str = s.nextLine();
+		// Get the index
+		System.out.println("enter the index at which you want the character from: ");
+		int index = s.nextInt();
+		// Get the character
+		System.out.println("Enter the character you want to replace from that index: ");
+
+		char ch = s.next().charAt(0);
+
+		// Print the original string
+		System.out.println("Original String = " + str);
+
+		// METHOD 1-USING STRING CLASS
+		str = str.substring(0, index) + ch + str.substring(index + 1);
+
+		// METHOD 2-USING STRING BUILDER
+		StringBuilder string1 = new StringBuilder(str);
+		string1.setCharAt(index, ch);
+
+		// //METHOD 3-USING STRING BUFFER
+		StringBuffer string2 = new StringBuffer(str);
+		string2.setCharAt(index, ch);
+
+		// Print the modified string
+		System.out.println("Modified String Using String Class= " + str);
+		System.out.println("Modified String Using String Builder= " + str);
+		System.out.println("Modified String Using String Buffer= " + str);
+
+	}
+}
