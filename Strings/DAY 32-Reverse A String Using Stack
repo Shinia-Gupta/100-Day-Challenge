@@ -1,0 +1,44 @@
+PROBLEM- Reverse A String Using Stack
+
+SOLUTION-
+package Strings;
+
+import java.io.*;
+import java.util.*;
+
+public class ReverseAStringUsingStack {
+
+	public static String ReverseString(String str) {
+		char[] reverseString = new char[str.length()];
+		// Declare a stack of type Character
+		Stack<Character> stack = new Stack<Character>();
+
+		// Traverse the String and push the character one by one into the Stack
+		for (int i = 0; i < str.length(); i++) {
+			// push the character into the Stack
+			stack.push(str.charAt(i));
+		}
+
+		// Now Pop the Characters from the stack until it becomes empty
+
+		int i = 0;
+		while (!stack.isEmpty()) { 
+			// popping element until stack become empty get the character from the top of the stack
+			reverseString[i++] = stack.pop();
+		}
+		// return string object
+		return new String(reverseString);
+	}
+
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+
+		// Get the String
+		System.out.println("Enter a string: ");
+		String str = s.nextLine();
+
+		// call the function
+		System.out.println(str + " <- Reverse -> " + ReverseString(str));
+
+	}
+}
