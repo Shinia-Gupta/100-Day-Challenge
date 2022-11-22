@@ -1,0 +1,39 @@
+PROBLEM- Print first letter of each word in a string using regex
+
+SOLUTION-
+package Strings;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.Scanner;
+
+public class PrintFirstLetterUsingRegex {
+
+
+	    public static void main(String[] args) 
+	    {
+	    	Scanner s = new Scanner(System.in);
+	    	System.out.println("Enter a string to get first ");
+	    	// Custom string input
+	    	String str1 = s.nextLine();
+	    	String str2 = s.nextLine();
+
+	        Pattern p = Pattern.compile("\\b[a-zA-Z]");
+	          
+	        Matcher m1 = p.matcher(str1);
+	        Matcher m2 = p.matcher(str2);
+	          
+	        System.out.println("First letter of each word from string \"" + str1 + "\" : ");
+	        while (m1.find())
+	            System.out.print(m1.group());
+	          
+	        System.out.println();
+	          
+	        System.out.println("First letter of each word from string \"" + str2 + "\" : ");
+	          
+	        while (m2.find()) 
+	            System.out.print(m2.group());
+	          
+	          
+	    }
+	}
+
