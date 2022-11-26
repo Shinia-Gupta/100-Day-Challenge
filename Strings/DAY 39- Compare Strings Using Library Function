@@ -1,0 +1,24 @@
+PROBLEM-Compare Strings Using Library Function
+
+SOLUTION-
+package Strings;
+
+import java.util.Scanner;
+
+public class StringCompare {
+	    public static void main(String[] args)
+	    {
+			Scanner s = new Scanner(System.in);
+			// Get the String
+			System.out.println("Enter a string: ");
+	        String s1 =  s.nextLine();
+	        String s2 =  s.nextLine();
+	        String s3 =  s.nextLine();
+	        String s4 =  s.nextLine();
+ 
+	        System.out.println(" Comparing strings with compareTo:");
+	        System.out.println(s1.compareTo(s2));
+	        System.out.println(s1.compareTo(s3));
+	        System.out.println(s1.compareTo(s4));
+	    }
+	}
