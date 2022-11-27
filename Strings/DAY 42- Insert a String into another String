@@ -1,0 +1,58 @@
+PROBLEM-Insert a String into another String
+
+SOLUTION- 
+package Strings;
+
+import java.lang.*;
+import java.util.Scanner;
+
+public class InsertNewStringIntoAnother {
+	// Java program to insert a string into another string
+	// without using any pre-defined method
+	// Function to insert string
+	public static String insertString(String originalString, String stringToBeInserted, int index) {
+
+		// Create a new string
+		String newString = new String();
+
+		for (int i = 0; i < originalString.length(); i++) {
+
+			// Insert the original string character
+			// into the new string
+			newString += originalString.charAt(i);
+
+			if (i == index) {
+
+				// Insert the string to be inserted
+				// into the new string
+				newString += stringToBeInserted+" ";
+			}
+		}
+
+		// return the modified String
+		return newString;
+	}
+
+	// Driver code
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		// Get the String
+		System.out.println("Enter string 1: ");
+		String s1 = s.nextLine();
+		System.out.println("Enter string 2: ");
+		String s2 = s.nextLine();
+		System.out.println("Enter index at which string is to be inserted: ");
+		int index = s.nextInt();
+		// Get the Strings
+		String originalString = s1;
+		String stringToBeInserted = s2;
+
+		System.out.println("Original String: " + originalString);
+		System.out.println("String to be inserted: " + stringToBeInserted);
+		System.out.println("String to be inserted at index: " + index);
+
+		// Insert the String
+		System.out.println("Modified String: " + insertString(originalString, stringToBeInserted, index));
+	}
+
+}
