@@ -1,0 +1,50 @@
+PROBLEM-Common elements in two ArrayLists
+
+SOLUTION-
+package Lists;
+
+import java.util.ArrayList;
+public class FindCommonElementsIn2ArrayLists {
+
+
+	  
+	    // main method
+	    public static void main(String[] args)
+	    {
+	  
+	        // create ArrayList list1
+	        ArrayList<String>
+	            list1 = new ArrayList<String>();
+	  
+	        // Add values in ArrayList
+	        list1.add("This");
+	        list1.add("is");
+	        list1.add("Java");
+	        list1.add("program");
+	  
+	        // print list 1
+	        System.out.println("List1: "
+	                           + list1);
+	  
+	        // Create ArrayList list2
+	        ArrayList<String>
+	            list2 = new ArrayList<String>();
+	  
+	        // Add values in ArrayList
+	        list2.add("This");
+	        list2.add("is");
+	        list2.add("Java");
+	  
+	        // print list 2
+	        System.out.println("List2: "
+	                           + list2);
+	  
+	        // Find the common elements
+	        list1.retainAll(list2);
+	  
+	        // print list 1
+	        System.out.println("Common elements: "
+	                           + list1);
+	    }
+	
+}
