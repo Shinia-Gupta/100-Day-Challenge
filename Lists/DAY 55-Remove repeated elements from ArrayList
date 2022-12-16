@@ -1,0 +1,53 @@
+PROBLEM- Remove repeated elements from ArrayList
+
+SOLUTION-
+package Lists;
+
+import java.util.*;
+public class RemoveRepeatedElementsfromArrayList {
+
+
+	    public static void main(String args[])
+	    {
+	  
+	        // create a ArrayList String type
+	        ArrayList<String>
+	            obj = new ArrayList<String>();
+	  
+	        // Initialize an ArrayList
+	        obj.add("Java");
+	        obj.add("code");
+	        obj.add("Programming");
+	  
+	        // print ArrayList
+	        System.out.println("Original ArrayList : "
+	                           + obj);
+	  
+	        // -----Using LinkedHashSet-----
+	        System.out.println("\nUsing LinkedHashSet:\n");
+	  
+	        // create a set and copy all value of list
+	        Set<String> set = new LinkedHashSet<>(obj);
+	  
+	        // create a list and copy all value of set
+	        List<String> obj1 = new ArrayList<>(set);
+	  
+	        // print ArrayList
+	        System.out.println("Modified ArrayList : "
+	                           + obj1);
+	  
+	        // -----Using HashSet-----
+	        System.out.println("\nUsing HashSet:\n");
+	  
+	        // create a set and copy all value of list
+	        Set<String> set1 = new HashSet<>(obj);
+	  
+	        // create a list and copy all value of set
+	        List<String> obj2 = new ArrayList<>(set);
+	  
+	        // print ArrayList
+	        System.out.println("Modified ArrayList : "
+	                           + obj2);
+	    }
+	
+}
