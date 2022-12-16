@@ -1,0 +1,42 @@
+PROBLEM- Add Element at First and Last Position of LinkedList
+
+SOLUTION-
+package Lists;
+import java.util.*;
+
+public class InsertElementsAtFirstAndLast {
+	// Java program to Insert Elements in LinkedList
+	// at first and last position to showcase
+	// addFirst() and addlast() Method
+
+	  
+	    // Main driver method
+	    public static void main(String args[])
+	    {
+	        // Creating an empty LinkedList of string type
+	        LinkedList<String> linkedList
+	            = new LinkedList<String>();
+	  
+	        // Note: By default, elements are inserted at last
+	  
+	        // Adding elements to the linkedList
+	        // using add() method
+	        linkedList.add("a");
+	        linkedList.add("v");
+	        linkedList.add("a");
+	  
+	        // Printing the elements in current LinkedList
+	        System.out.println("Linked list: " + linkedList);
+	  
+	        // Customly inserting element at first position
+	        linkedList.addFirst("J");
+	  
+	        // Inserting at last position
+	        linkedList.addLast("P");
+	  
+	        // Print the updated LinkedList
+	        System.out.println("Updated Linked list: "
+	                           + linkedList);
+	    }
+	}
+
