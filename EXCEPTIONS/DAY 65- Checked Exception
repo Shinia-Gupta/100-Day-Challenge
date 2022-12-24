@@ -1,0 +1,20 @@
+PROBLEM-Checked Exception
+
+SOLUTION-
+package Exceptions;
+import java.io.*;
+public class CheckedException {
+
+	    public static void main(String args[])
+	    {
+	        // this file does not exist in the location
+	        try {
+	            FileInputStream GFG
+	                = new FileInputStream("C:/myfile.txt");
+	        }
+	        catch (Exception e) {
+	            System.out.println("File not found");
+	        }
+	    }
+
+}
