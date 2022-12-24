@@ -1,0 +1,18 @@
+PROBLEM-Unreachable Code error
+
+SOLUTION-
+package Exceptions;
+
+public class UnreachableCodeError {
+	public static void main(String args[])
+    {
+ 
+        System.out.println("gets printed");
+ 
+        return;
+ 
+        // it will never run and gives error as unreachable code.
+        System.out.println("does not get printed");
+    }
+}
+
