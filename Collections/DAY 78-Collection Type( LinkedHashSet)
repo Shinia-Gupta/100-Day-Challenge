@@ -1,0 +1,30 @@
+PROBLEM-Collection Type(LinkedHashSet)
+
+SOLUTION-
+package Collections;
+// Java program to demonstrate the
+// working of a LinkedHashSet
+import java.util.*;
+
+public class LinkedHashSetCollection {
+
+		public static void main(String args[])
+		{
+			// Creating LinkedHashSet and
+			// adding elements
+			LinkedHashSet<String> lhs = new LinkedHashSet<String>();
+
+			lhs.add("Java");
+			lhs.add("Collection");
+			lhs.add("Type");
+			lhs.add("Linked HashSet");
+			lhs.add("is sVery helpful");
+
+			// Traversing elements
+			Iterator<String> itr = lhs.iterator();
+			while (itr.hasNext()) {
+				System.out.println(itr.next());
+			}
+		}
+	}
+
